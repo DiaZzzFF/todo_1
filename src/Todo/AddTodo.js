@@ -6,8 +6,12 @@ const useInputValue = (defaultValue = ``) => {
   const [value, setValue] = useState(defaultValue);
 
   return {
-    value,
-    onChange: (event) => setValue(event.target.value),
+    bind: {
+      value,
+      onChange: (event) => setValue(event.target.value),
+    },
+    clear: () => setValue(``),
+    value: () => value,
   };
 };
 
@@ -17,9 +21,9 @@ const AddTodo = ({onCreate}) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    if (myInput.value.trim()) {
-      onCreate(myInput.value);
-      //setValue(``);
+    if (myInput.value().trim()) {
+      onCreate(myInput.value());
+      myInput.clear();
     }
   }
   
@@ -28,7 +32,7 @@ const AddTodo = ({onCreate}) => {
       style={{marginBottom: `1rem`}}
       onSubmit={submitHandler}
     >
-      <input {...myInput} />
+      <input {...myInput.bind} />
 
       <button type="submit">
         Add todo

@@ -58,7 +58,6 @@ const App = () => {
     ]))
   }
   
-
   return (
     <Context.Provider value={{removeTodo}}>
       <div className="wrapper">
