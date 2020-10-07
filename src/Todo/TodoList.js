@@ -11,7 +11,7 @@ const styles = {
 
     listStyle: `none`,
   }
-}
+};
 
 const TodoList = (props) => {
   return (
@@ -28,7 +28,7 @@ const TodoList = (props) => {
       })}
     </ul>
   );
-}
+};
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.object).isRequired,

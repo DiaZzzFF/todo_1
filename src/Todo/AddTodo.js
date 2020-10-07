@@ -25,8 +25,8 @@ const AddTodo = ({onCreate}) => {
       onCreate(myInput.value());
       myInput.clear();
     }
-  }
-  
+  };
+
   return (
     <form
       style={{marginBottom: `1rem`}}
@@ -39,7 +39,7 @@ const AddTodo = ({onCreate}) => {
       </button>
     </form>
   );
-}
+};
 
 AddTodo.propTypes = {
   onCreate: PropTypes.func.isRequired,

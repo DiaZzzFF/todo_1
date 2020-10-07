@@ -28,7 +28,7 @@ const TodoItem = ({todo, index, taskStatus}) => {
 
         {todo.title}
       </span>
-      
+
       <button
         className="todo__btn"
         type="button"
@@ -38,7 +38,7 @@ const TodoItem = ({todo, index, taskStatus}) => {
       </button>
     </li>
   );
-}
+};
 
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,

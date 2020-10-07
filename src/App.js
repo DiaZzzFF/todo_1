@@ -41,7 +41,7 @@ const App = () => {
       }
 
       return todo;
-    }))
+    }));
   };
 
   const removeTodo = (id) => {
@@ -55,9 +55,9 @@ const App = () => {
         id: Date.now(),
         completed: false,
       },
-    ]))
-  }
-  
+    ]));
+  };
+
   return (
     <Context.Provider value={{removeTodo}}>
       <div className="wrapper">
@@ -66,16 +66,13 @@ const App = () => {
         <AddTodo onCreate={addTodo} />
 
         {todos.length
-          ? <TodoList
-              todos={todos}
-              btnToggle={toggleTodo}
-            />
+          ? <TodoList todos={todos} btnToggle={toggleTodo} />
           : <p>No todos!</p>
         }
       </div>
     </Context.Provider>
   );
-}
+};
 
 
 export default App;
