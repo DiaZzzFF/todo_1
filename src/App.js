@@ -5,7 +5,11 @@ import Context from "./context";
 import Loader from "./Loader";
 
 
-const AddTodo = React.lazy(() => import(`./Todo/AddTodo`));
+const AddTodo = React.lazy(() => new Promise(resolve => {
+  setTimeout(() => {
+    resolve(import(`./Todo/AddTodo`));
+  }, 3000);
+}));
 
 const App = () => {
   const [todos, setTodos] = React.useState([]);
